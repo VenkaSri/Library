@@ -1,0 +1,30 @@
+.card {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 20px;
+    width: 350px;
+    height: 200px;
+    margin-top: 90px;
+    margin-left: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+
+input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid blue;
+    width: 90%;
+}
+
+
