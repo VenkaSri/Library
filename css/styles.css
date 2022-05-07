@@ -1,8 +1,8 @@
 .card {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     border-radius: 20px;
-    width: 350px;
-    height: 200px;
+    width: 400px;
+    height: 260px;
     margin-top: 90px;
     margin-left: 90px;
     display: flex;
@@ -23,12 +23,21 @@
     display: flex;
 }
 
-
 input {
     outline: none;
     border: none;
     border-bottom: 1px solid rgba(9, 30, 66, 0.25);
     width: 90%;
+}
+
+.addBtn  {
+    width: 100px;
+    border: 2px solid rgb(52, 170, 19);
+    margin-top: -5px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 
