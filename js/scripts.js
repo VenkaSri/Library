@@ -67,10 +67,12 @@ let cardDiv = `
 //form to add book
 function createInput() {
 
-  let div = document.createElement('div');
-  div.classList.add('card');
-  let divTwo = document.createElement('div');
-  divTwo.classList.add('book-info');
+  let mainDiv = document.createElement('div');
+  mainDiv.classList.add('card');
+  let infoDiv = document.createElement('div');
+  infoDiv.classList.add('book-info');
+  let readDiv = document.createElement('div');
+  readDiv.classList.add('book-read');
   let book = document.createElement("input");
   book.setAttribute("type", "text");
   book.setAttribute("id", "bookName");
@@ -83,13 +85,24 @@ function createInput() {
   page.setAttribute("type", "text");
   page.setAttribute("id", "bookPages");
   page.setAttribute("placeholder", "Pages");
+  let checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.setAttribute("id", "readCheck");
+  checkbox.setAttribute("name", "readCheck");
+  checkbox.setAttribute("value", "Read");
+  let lbl = document.createElement("label");
+  lbl.setAttribute("for", "readCheck");
+  lbl.innerHTML = 'Read';
 
-  div.append(divTwo);
-  divTwo.append(book);
-  divTwo.append(author);
-  divTwo.append(page);
+  mainDiv.append(infoDiv);
+  infoDiv.append(book);
+  infoDiv.append(author);
+  infoDiv.append(page);
+  mainDiv.append(readDiv);
+  readDiv.append(checkbox);
+  readDiv.append(lbl);
 
-  mainCont.append(div);
+  mainCont.append(mainDiv);
 }
 
 
