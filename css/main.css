@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 .add {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     width: 50px;
@@ -13,4 +15,26 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
     
+}
+
+.header {
+    position: relative;
+    display: flex;
+    height: 150px;
+    width: 100%;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.header h1 {
+    font-size: 5em;
+    font-family: 'Macondo', cursive;
+}
+
+.header div {
+    position: absolute;
+    top: 50%;
+    right: 90px;
 }
