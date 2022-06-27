@@ -10,6 +10,7 @@ const mainCont = document.querySelector('.main-container');
 addButton.addEventListener('click', () => {
   createInput();
 
+
 })  
 
 
@@ -23,6 +24,8 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
+
 
 function addBookToLibrary() {
   myLibrary.push(new Book(bookName.value, bookAuthor.value, bookPages.value));
@@ -84,6 +87,18 @@ function createInput() {
     addValue();
   
   }) 
+
+  Book.prototype = {
+    read() {
+      if(checkbox.checked === true) {
+        console.log("Read");
+      } else {
+        console.log(" Not Read");
+
+      }
+      return checkbox.value;
+    }
+  }
 }
 
 function addValue() {
@@ -91,10 +106,23 @@ function addValue() {
   let author = myLibrary[0].author;
   let page = myLibrary[0].pages;
   const myNode = document.querySelector(".card");
-  let addDiv = document.createElement('div');
-  myNode.append(addDiv);
-  addDiv.innerHTML = name;
+  let content = document.createElement('div');
+  content.classList.add("created-card");
+  myNode.append(content);
+  let nDiv = document.createElement('div');
+  let aDiv = document.createElement('div');
+  let pDiv = document.createElement('div');
+  content.append(nDiv);
+  content.append(aDiv);
+  content.append(pDiv);
+  nDiv.append(name);
+  aDiv.append(author);
+  pDiv.append(page);
 
+
+
+  myLibrary[0].read();
+  myLibrary.length = 0;
 }
 
 
