@@ -2,7 +2,7 @@ const addButton = document.querySelector('button');
 
 // const bTable = document.querySelector('table');
 const mainCont = document.querySelector('.main-container');
-
+let checkRead;
 
 
 
@@ -12,10 +12,6 @@ addButton.addEventListener('click', () => {
 
 
 })  
-
-
-
-
 
 let myLibrary = [];
 
@@ -91,12 +87,10 @@ function createInput() {
   Book.prototype = {
     read() {
       if(checkbox.checked === true) {
-        console.log("Read");
+        checkRead = true;
       } else {
-        console.log(" Not Read");
-
+        checkRead = false;
       }
-      return checkbox.value;
     }
   }
 }
@@ -115,18 +109,42 @@ function addValue() {
   content.append(nDiv);
   content.append(aDiv);
   content.append(pDiv);
+
   nDiv.append(name);
   aDiv.append(author);
   pDiv.append(page);
 
+  let lbl = document.createElement("label");
+  content.append(lbl);
+lbl.classList.add("switch");
+let chk = document.createElement("input");
+chk.setAttribute("type", "checkbox");
+chk.id = "chkBox";
+let span = document.createElement("span");
+span.classList.add("slider");
+span.classList.add("round"); 
+lbl.append(chk);
+lbl.append(span);
 
-
-  myLibrary[0].read();
-  myLibrary.length = 0;
+myLibrary[0].read();
+if(checkRead) {
+  chk.checked = true;
+} else {
+  chk.checked = false;
 }
 
-
-
+document.addEventListener('click',function(e){
+  if(e.target && e.target.id== 'chkBox'){
+    if(chk.checked === true) {
+      checkRead = true;
+    } else {
+      checkRead = false;
+    }
+   }
+});
+  
+  myLibrary.length = 0;
+}
 
 
 
