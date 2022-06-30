@@ -3,10 +3,22 @@ const addButton = document.querySelector("button");
 // const bTable = document.querySelector('table');
 const mainCont = document.querySelector(".main-container");
 let checkRead;
-let formSuccess;
+let formSuccess = true;
 
 addButton.addEventListener("click", () => {
-  createInput();
+  if(formSuccess) {
+    createInput();
+    formSuccess = false;
+  } else {
+    setTimeout(function() {
+      const myNode = document.querySelector(".card");
+    myNode.classList.add('shake');
+      setTimeout(function() {
+        const myNode = document.querySelector(".card");
+        myNode.classList.remove('shake');
+      }, 1000)
+    }, 0);
+  }
 });
 
 let myLibrary = [];
@@ -16,6 +28,7 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
 
 function addBookToLibrary() {
   if(bookName.value === '' || bookAuthor.value === '' || bookPages.value === '') {
