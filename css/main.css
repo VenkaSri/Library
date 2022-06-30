@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .add {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     width: 50px;
@@ -13,8 +21,11 @@
 
 .main-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-    
+    grid-template-columns: repeat(auto-fill, minmax(405px, 1fr));
+    margin-top: 2%;
+    grid-row-gap: 40px;
+    width: 100%;
+    max-width: 1500px;
 }
 
 .header {
@@ -37,4 +48,13 @@
     position: absolute;
     top: 50%;
     right: 90px;
+}
+
+.del {
+    position: absolute;
+    right: 10px;
+}
+
+.del a {
+    font-size: 20px;
 }
