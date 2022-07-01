@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tienne&display=swap');
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -22,10 +24,17 @@ body {
 .main-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(405px, 1fr));
-    margin-top: 2%;
     grid-row-gap: 40px;
     width: 100%;
     max-width: 1500px;
+    margin: 50px auto;
+}
+
+.main-container img {
+    position: absolute;
+    border: 1px solid red;
+    width: 100%;
+    bottom: 0;
 }
 
 .header {
@@ -33,21 +42,22 @@ body {
     display: flex;
     height: 150px;
     width: 100%;
-    background-color: lightblue;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    box-shadow: rgb(38, 57, 77) 0px 5px 10px;
 }
 
 .header h1 {
     font-size: 5em;
-    font-family: 'Macondo', cursive;
+    font-family: 'Tienne', serif;
+    color: #934949;
 }
 
 .header div {
     position: absolute;
-    top: 50%;
+    top: 25%;
     right: 90px;
+    cursor: pointer;
 }
 
 .del {
@@ -58,3 +68,4 @@ body {
 .del a {
     font-size: 20px;
 }
+

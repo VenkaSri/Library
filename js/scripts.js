@@ -1,9 +1,10 @@
-const addButton = document.querySelector("button");
+const addButton = document.querySelector(".addIcon");
+const delDiv = document.querySelector(".del");
 
 // const bTable = document.querySelector('table');
 const mainCont = document.querySelector(".main-container");
 let checkRead;
-let formSuccess = true;
+let formSuccess = false;
 
 addButton.addEventListener("click", () => {
   if(formSuccess) {
@@ -28,6 +29,9 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
+
+
 
 
 function addBookToLibrary() {
@@ -131,6 +135,10 @@ function addValue() {
   let author = myLibrary[0].author;
   let page = myLibrary[0].pages;
   const myNode = document.querySelector(".card");
+  let topDiv = document.createElement("div");
+  topDiv.classList.add('topDiv');
+  let botDiv = document.createElement("div");
+  botDiv.classList.add('botDiv');
   let content = document.createElement("div");
   let del = document.createElement("div");
   content.classList.add("created-card");
@@ -143,16 +151,18 @@ function addValue() {
   delLink.innerHTML = "Del";
   content.append(del);
   del.append(delLink);
-  content.append(nDiv);
-  content.append(aDiv);
-  content.append(pDiv);
+  content.append(topDiv);
+  content.append(botDiv);
+topDiv.append(nDiv);
+topDiv.append(aDiv);
+topDiv.append(pDiv);
 
   nDiv.append(name);
   aDiv.append(author);
   pDiv.append(page);
 
   let lbl = document.createElement("label");
-  content.append(lbl);
+  botDiv.append(lbl);
   lbl.classList.add("switch");
   let chk = document.createElement("input");
   chk.setAttribute("type", "checkbox");
@@ -193,3 +203,15 @@ function toggleDel(div) {
     div.style.display = "none";
   }
 }
+
+
+window.onload = () => {
+  createInput();
+}
+
+function removeCard(){
+  const myNode = document.querySelector(".card");
+  myNode.style.display = 'none';
+}
+
+
