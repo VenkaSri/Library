@@ -12,6 +12,9 @@ addButton.addEventListener("click", () => {
     formSuccess = false;
   } else {
     setTimeout(function() {
+      const err = document.querySelector('.errorMsg');
+      err.innerHTML = "You can only add one book at a time!"
+      err.style.display = 'block';
       const myNode = document.querySelector(".card");
     myNode.classList.add('shake');
       setTimeout(function() {
@@ -36,6 +39,9 @@ function Book(title, author, pages) {
 
 function addBookToLibrary() {
   if(bookName.value === '' || bookAuthor.value === '' || bookPages.value === '') {
+    const err = document.querySelector('.errorMsg');
+    err.innerHTML = 'Fill out the fields!';
+    err.style.display = 'block';
     setTimeout(function() {
       const myNode = document.querySelector(".card");
     myNode.classList.add('shake');
@@ -96,11 +102,15 @@ function createInput() {
   let lbl = document.createElement("label");
   lbl.setAttribute("for", "readCheck");
   lbl.innerHTML = "Read";
+  let errorMessage = document.createElement('p');
+  errorMessage.classList.add('errorMsg');
+  // errorMessage.innerText = 'Fill out the fields!'
 
   mainDiv.append(infoDiv);
   infoDiv.append(book);
   infoDiv.append(author);
   infoDiv.append(page);
+  mainDiv.append(errorMessage);
   mainDiv.append(readDiv);
   readDiv.append(checkbox);
   readDiv.append(lbl);
@@ -148,6 +158,7 @@ function addValue() {
   let aDiv = document.createElement("div");
   let pDiv = document.createElement("div");
   let delLink = document.createElement("a");
+  let sPara = document.createElement("p");
   delLink.innerHTML = "Del";
   content.append(del);
   del.append(delLink);
@@ -156,6 +167,8 @@ function addValue() {
 topDiv.append(nDiv);
 topDiv.append(aDiv);
 topDiv.append(pDiv);
+botDiv.append(sPara);
+sPara.innerHTML = "Status";
 
   nDiv.append(name);
   aDiv.append(author);
