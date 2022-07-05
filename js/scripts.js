@@ -7,20 +7,20 @@ let checkRead;
 let formSuccess = false;
 
 addButton.addEventListener("click", () => {
-  if(formSuccess) {
+  if (formSuccess) {
     createInput();
     formSuccess = false;
   } else {
-    setTimeout(function() {
-      const err = document.querySelector('.errorMsg');
-      err.innerHTML = "You can only add one book at a time!"
-      err.style.display = 'block';
+    setTimeout(function () {
+      const err = document.querySelector(".errorMsg");
+      err.innerHTML = "You can only add one book at a time!";
+      err.style.display = "block";
       const myNode = document.querySelector(".card");
-    myNode.classList.add('shake');
-      setTimeout(function() {
+      myNode.classList.add("shake");
+      setTimeout(function () {
         const myNode = document.querySelector(".card");
-        myNode.classList.remove('shake');
-      }, 1000)
+        myNode.classList.remove("shake");
+      }, 1000);
     }, 0);
   }
 });
@@ -33,22 +33,22 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
-
-
-
-
 function addBookToLibrary() {
-  if(bookName.value === '' || bookAuthor.value === '' || bookPages.value === '') {
-    const err = document.querySelector('.errorMsg');
-    err.innerHTML = 'Fill out the fields!';
-    err.style.display = 'block';
-    setTimeout(function() {
+  if (
+    bookName.value === "" ||
+    bookAuthor.value === "" ||
+    bookPages.value === ""
+  ) {
+    const err = document.querySelector(".errorMsg");
+    err.innerHTML = "Fill out the fields!";
+    err.style.display = "block";
+    setTimeout(function () {
       const myNode = document.querySelector(".card");
-    myNode.classList.add('shake');
-      setTimeout(function() {
+      myNode.classList.add("shake");
+      setTimeout(function () {
         const myNode = document.querySelector(".card");
-        myNode.classList.remove('shake');
-      }, 1000)
+        myNode.classList.remove("shake");
+      }, 1000);
     }, 0);
     formSuccess = false;
   } else {
@@ -59,14 +59,13 @@ function addBookToLibrary() {
 
 function hidePopup() {
   const myNode = document.querySelector(".card");
-  myNode.classList.add('shake');
+  myNode.classList.add("shake");
 }
 
 function deleteClass() {
   const myNode = document.querySelector(".card");
-  myNode.classList.remove('shake');
+  myNode.classList.remove("shake");
 }
-
 
 //form card
 function createInput() {
@@ -81,16 +80,19 @@ function createInput() {
   readDiv.classList.add("book-read");
   let book = document.createElement("input");
   book.setAttribute("type", "text");
+  book.setAttribute("maxlength", 120)
   book.setAttribute("id", "bookName");
   book.setAttribute("placeholder", "Book name");
   book.required = true;
   let author = document.createElement("input");
   author.setAttribute("type", "text");
+ author.setAttribute("maxlength", 40)
   author.setAttribute("id", "bookAuthor");
   author.setAttribute("placeholder", "Author");
   author.required = true;
   let page = document.createElement("input");
   page.setAttribute("type", "number");
+page.setAttribute("max", 10000)
   page.setAttribute("id", "bookPages");
   page.setAttribute("placeholder", "Pages");
   page.required = true;
@@ -101,9 +103,10 @@ function createInput() {
   checkbox.setAttribute("value", "Read");
   let lbl = document.createElement("label");
   lbl.setAttribute("for", "readCheck");
+  lbl.classList.add("rdLbl");
   lbl.innerHTML = "Read";
-  let errorMessage = document.createElement('p');
-  errorMessage.classList.add('errorMsg');
+  let errorMessage = document.createElement("p");
+  errorMessage.classList.add("errorMsg");
   // errorMessage.innerText = 'Fill out the fields!'
 
   mainDiv.append(infoDiv);
@@ -121,12 +124,11 @@ function createInput() {
   const addBtn = document.querySelector(".addBtn");
   addBtn.addEventListener("click", () => {
     addBookToLibrary();
-    if(formSuccess) {
+    if (formSuccess) {
       const myNode = document.querySelector(".card");
       myNode.innerHTML = "";
       addValue();
-    } 
-    
+    }
   });
 
   Book.prototype = {
@@ -146,17 +148,20 @@ function addValue() {
   let page = myLibrary[0].pages;
   const myNode = document.querySelector(".card");
   let topDiv = document.createElement("div");
-  topDiv.classList.add('topDiv');
+  topDiv.classList.add("topDiv");
   let botDiv = document.createElement("div");
-  botDiv.classList.add('botDiv');
+  botDiv.classList.add("botDiv");
   let content = document.createElement("div");
   let del = document.createElement("div");
   content.classList.add("created-card");
   del.classList.add("del");
   myNode.append(content);
-  let nDiv = document.createElement("div");
+  let nDiv = document.createElement("p");
+  nDiv.classList.add("bookName");
   let aDiv = document.createElement("div");
+  aDiv.classList.add('.bookAuthor');
   let pDiv = document.createElement("div");
+  pDiv.classList.add('.bookPages');
   let delLink = document.createElement("a");
   let sPara = document.createElement("p");
   delLink.innerHTML = "Del";
@@ -164,15 +169,15 @@ function addValue() {
   del.append(delLink);
   content.append(topDiv);
   content.append(botDiv);
-topDiv.append(nDiv);
-topDiv.append(aDiv);
-topDiv.append(pDiv);
-botDiv.append(sPara);
-sPara.innerHTML = "Status";
+  topDiv.append(nDiv);
+  topDiv.append(aDiv);
+  topDiv.append(pDiv);
+  botDiv.append(sPara);
+  sPara.innerHTML = "Status";
 
   nDiv.append(name);
   aDiv.append(author);
-  pDiv.append(page);
+  pDiv.append(page + ' pages');
 
   let lbl = document.createElement("label");
   botDiv.append(lbl);
@@ -217,14 +222,14 @@ function toggleDel(div) {
   }
 }
 
-
 window.onload = () => {
   createInput();
-}
+};
 
-function removeCard(){
+function removeCard() {
   const myNode = document.querySelector(".card");
-  myNode.style.display = 'none';
+  myNode.style.display = "none";
 }
 
-
+const d = new Date();
+document.querySelector(".year").innerHTML = d.getFullYear();
