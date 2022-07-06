@@ -80,19 +80,19 @@ function createInput() {
   readDiv.classList.add("book-read");
   let book = document.createElement("input");
   book.setAttribute("type", "text");
-  book.setAttribute("maxlength", 120)
+  book.setAttribute("maxlength", 120);
   book.setAttribute("id", "bookName");
   book.setAttribute("placeholder", "Book name");
   book.required = true;
   let author = document.createElement("input");
   author.setAttribute("type", "text");
- author.setAttribute("maxlength", 40)
+  author.setAttribute("maxlength", 40);
   author.setAttribute("id", "bookAuthor");
   author.setAttribute("placeholder", "Author");
   author.required = true;
   let page = document.createElement("input");
   page.setAttribute("type", "number");
-page.setAttribute("max", 10000)
+  page.setAttribute("max", 10000);
   page.setAttribute("id", "bookPages");
   page.setAttribute("placeholder", "Pages");
   page.required = true;
@@ -128,6 +128,7 @@ page.setAttribute("max", 10000)
       const myNode = document.querySelector(".card");
       myNode.innerHTML = "";
       addValue();
+      removeCard();
     }
   });
 
@@ -146,24 +147,24 @@ function addValue() {
   let name = myLibrary[0].title;
   let author = myLibrary[0].author;
   let page = myLibrary[0].pages;
-  const myNode = document.querySelector(".card");
+  let content = document.createElement('div');
+  content.classList.add("created-card");
+  // const content = document.querySelector(".card");
   let topDiv = document.createElement("div");
   topDiv.classList.add("topDiv");
   let botDiv = document.createElement("div");
   botDiv.classList.add("botDiv");
-  let content = document.createElement("div");
   let del = document.createElement("div");
-  content.classList.add("created-card");
   del.classList.add("del");
-  myNode.append(content);
   let nDiv = document.createElement("p");
   nDiv.classList.add("bookName");
   let aDiv = document.createElement("div");
-  aDiv.classList.add('.bookAuthor');
+  aDiv.classList.add("bookAuthor");
   let pDiv = document.createElement("div");
-  pDiv.classList.add('.bookPages');
+  pDiv.classList.add("bookPages");
   let delLink = document.createElement("a");
   let sPara = document.createElement("p");
+  sPara.classList.add('status-lbl')
   delLink.innerHTML = "Del";
   content.append(del);
   del.append(delLink);
@@ -177,7 +178,7 @@ function addValue() {
 
   nDiv.append(name);
   aDiv.append(author);
-  pDiv.append(page + ' pages');
+  pDiv.append(page + " pages");
 
   let lbl = document.createElement("label");
   botDiv.append(lbl);
@@ -190,6 +191,8 @@ function addValue() {
   span.classList.add("round");
   lbl.append(chk);
   lbl.append(span);
+
+  mainCont.insertBefore(content, mainCont.firstChild);
 
   myLibrary[0].read();
   if (checkRead) {
@@ -228,7 +231,7 @@ window.onload = () => {
 
 function removeCard() {
   const myNode = document.querySelector(".card");
-  myNode.style.display = "none";
+  myNode.remove();
 }
 
 const d = new Date();

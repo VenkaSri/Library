@@ -1,8 +1,7 @@
 .card {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     border-radius: 20px;
-    width: 400px;
-    height: 300px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +9,20 @@
     border: 1px solid grey;
     position: relative;
     background-color: rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+}
+
+.created-card {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 20px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10px;
+  border: 1px solid grey;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .book-info {
@@ -69,38 +81,21 @@ input {
   color: rgb(188,220,191);
 }
 
-.created-card {
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    border-radius: 20px;
-    width: 400px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 2.2em;
-    position: relative;
-    
-}
-
-/* .created-card > div {
-    margin-bottom: 8%;
-    border: 1px solid red;
-} */
-
-
 
 input[type=text],input[type=number] {
   height: 30px;
 }
 
 .topDiv {
-  width: 100%;
-  height: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   line-height: 1.2;
   align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
 }
 
 
@@ -115,18 +110,41 @@ input[type=text],input[type=number] {
   margin-top: 10px;
 }
 
+.bookAuthor {
+  font-size: 20px;
+  line-height: 1.3;
+  color: #fff;
+  width: 80%;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.bookPages {
+  font-size: 15px;
+  line-height: 1.3;
+  color: #fff;
+  width: 80%;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.status-lbl {
+  font-size: 30px;
+}
 
 
 .botDiv {
-  height: 50%;
+
   width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   line-height: 1.2;
+  border: 1px solid red;
 }
+
 
 .errorMsg {
   display: none;
