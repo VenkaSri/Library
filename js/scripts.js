@@ -67,8 +67,9 @@ function deleteClass() {
   myNode.classList.remove("shake");
 }
 
-//form card
+//create form card
 function createInput() {
+
   let addDiv = document.createElement("div");
   addDiv.classList.add("addBtn");
   addDiv.innerHTML = "Add";
@@ -80,7 +81,7 @@ function createInput() {
   readDiv.classList.add("book-read");
   let book = document.createElement("input");
   book.setAttribute("type", "text");
-  book.setAttribute("maxlength", 120);
+  book.setAttribute("maxlength", 100);
   book.setAttribute("id", "bookName");
   book.setAttribute("placeholder", "Book name");
   book.required = true;
@@ -107,7 +108,7 @@ function createInput() {
   lbl.innerHTML = "Read";
   let errorMessage = document.createElement("p");
   errorMessage.classList.add("errorMsg");
-  // errorMessage.innerText = 'Fill out the fields!'
+
 
   mainDiv.append(infoDiv);
   infoDiv.append(book);
@@ -191,24 +192,35 @@ function addValue() {
   span.classList.add("round");
   lbl.append(chk);
   lbl.append(span);
+  let statusPara = document.createElement('p');
+  statusPara.classList.add("statusPara");
+  botDiv.append(statusPara);
 
   mainCont.insertBefore(content, mainCont.firstChild);
 
+
   myLibrary[0].read();
+  //displays status/del based what user selects from form 
   if (checkRead) {
     chk.checked = true;
+    toggleStatus(statusPara); 
     toggleDel(del);
   } else {
     chk.checked = false;
+    toggleStatus(statusPara); 
     toggleDel(del);
   }
+
+  //change status/del based what user selects after book card has been created 
   document.addEventListener("click", function (e) {
     if (e.target && e.target.id == "chkBox") {
       if (chk.checked === true) {
         checkRead = true;
+        toggleStatus(statusPara); 
         toggleDel(del);
       } else {
         checkRead = false;
+        toggleStatus(statusPara); 
         toggleDel(del);
       }
     }
@@ -222,6 +234,14 @@ function toggleDel(div) {
     div.style.display = "block";
   } else {
     div.style.display = "none";
+  }
+}
+
+function toggleStatus(element) {
+  if (checkRead == true) {
+    element.innerHTML = "READ";
+  } else {
+    element.innerHTML = "IN PROGRESS";
   }
 }
 

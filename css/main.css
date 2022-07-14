@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
 
 
 html,body {
@@ -10,9 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(16,55,131);
-background: linear-gradient(360deg, rgba(16,55,131,1) 1%, rgba(188,220,191,1) 100%);
-word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 
@@ -30,41 +30,78 @@ word-wrap: break-word;
 .main-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(405px, 1fr));
+    grid-template-rows: 375px;
     grid-row-gap: 40px;
     width: 100%;
     max-width: 1500px;
     margin: 50px auto;
 }
 
-.main-container img {
-    position: absolute;
-    border: 1px solid red;
-    width: 100%;
-    bottom: 0;
-}
-
 .header {
-    position: relative;
     display: flex;
-    height: 150px;
+    height: 185px;
     width: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .header h1 {
     font-size: 5em;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-variant: small-caps;
     font-size: 120px;
-    color: #fff;
+    color: #000;
 }
 
-.header div {
+.header img {
+    width: 45px;
+    height: 50px;
+    align-self: center;
     position: absolute;
-    top: 25%;
-    right: 90px;
-    cursor: pointer;
+    right: 4%;
 }
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #000;
+    padding: 10px 0;
+  }
+  
+  .footer {
+    margin-top: auto;
+  }
+  
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .copyright a {
+    width: 24px;
+    height: 20px;
+    align-self: center;
+    color: #fff;
+  }
+  
+  .copyright p {
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* https://codepen.io/giana/pen/BZaGyP */
+  .copyright a:hover,
+  .copyright a:focus {
+    transform: translateY(-0.25em);
+  }
 
 .del {
     position: absolute;

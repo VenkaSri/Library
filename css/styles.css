@@ -64,22 +64,7 @@ input {
   width: 90%;
 }
 
-.addBtn  {
-    width: 100px;
-    background-color: rgb(188,220,191);
-    margin-top: 15px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-}
 
-.addBtn:hover  {
-  border: 1px solid rgb(188,220,191);
-  background-color: rgba(0, 0, 0, 0.3);
-  color: rgb(188,220,191);
-}
 
 
 input[type=text],input[type=number] {
@@ -93,9 +78,6 @@ input[type=text],input[type=number] {
   justify-content: space-around;
   line-height: 1.2;
   align-items: center;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 10px;
 }
 
 
@@ -136,13 +118,13 @@ input[type=text],input[type=number] {
 
 
 .botDiv {
-
-  width: 100%;
+  border-top: 1px solid #fff;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   line-height: 1.2;
-  border: 1px solid red;
 }
 
 
@@ -157,70 +139,6 @@ input[type=text],input[type=number] {
 .rdLbl {
   color: white;
 }
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-
-  
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
 
   .shake {
     animation: shake-animation 4.72s ease infinite;
@@ -239,40 +157,3 @@ input[type=text],input[type=number] {
   }
 
 
-  .footer {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .footer {
-    margin-top: auto;
-
-  }
-  
-  .copyright {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .copyright a {
-    width: 24px;
-    height: 20px;
-    align-self: center;
-    color: #345678;
-  }
-  
-  .copyright p {
-    color: #fff;
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  /* https://codepen.io/giana/pen/BZaGyP */
-  .copyright a:hover,
-  .copyright a:focus {
-    transform: translateY(-0.25em);
-  }
