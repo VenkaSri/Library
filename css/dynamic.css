@@ -1,29 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+/* add book form card */
 .card {
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    border-radius: 20px;
-    width: 450px;
+    border-radius: 15px;
+    width: 470px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 10px;
-    border: 1px solid grey;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    margin-left: 38px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.card h2 {
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 13px;
+  
+}
+
+.bookInfo {
+  text-align: center;
+  margin-top: 19px;
+}
+
+.bookInfo input {
+  outline: none;
+  border: none;
+  background-color: #F1F1F1;
+  border-radius: 15px;
+  width: 420px;
+  height: 45px;
+  margin-bottom: 26px;
+  padding-left: 20px;
+  color: #000;
+}
+
+.bookRead {
+  display: flex;
+  width: 150px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.rdLbl {
+  color: #000;
+  font-size: 20px;
+  align-self: center;
+  margin-top: 3px;
 }
 
 .addBtn  {
-    width: 100px;
-    background-color: rgb(188,220,191);
+    width: 115px;
+    background-color: #6BAB39;
     margin-top: 15px;
     height: 40px;
+    font-family: 'Inter', sans-serif;
     display: grid;
     place-items: center;
     border-radius: 10px;
     cursor: pointer;
+    color: #fff;
 }
 
 .addBtn:hover  {
-  border: 1px solid rgb(188,220,191);
-  background-color: rgba(0, 0, 0, 0.3);
-  color: rgb(188,220,191);
+  border: 1px solid #6BAB39;
+  background-color: #fff;
+  color: #000;
 }
+
+
+
+
+
