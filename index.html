@@ -22,14 +22,39 @@
   <body>
     <header role="head" class="header">
       <h1>Library</h1>
-      <img role="button" class="addIcon" src="images/addbook.png" alt="add book icon" />
+      <img
+        role="button"
+        class="addIcon"
+        src="images/addbook.png"
+        alt="add book icon"
+      />
     </header>
     <main class="main-container">
+      <div class="created-card">
+        <div class="del" style="display: block"><a>Del</a></div>
+        <div class="topDiv">
+          <p class="bookName">Harry POtter</p>
+          <div class="bookAuthor">Jk. Rowling</div>
+          <div class="bookPages">786 PAGES</div>
+        </div>
+        <hr>
+        <div class="botDiv">
+          <p class="statusLbl">STATUS</p>
+          <label class="switch"
+            ><input type="checkbox" id="chkBox" /><span
+              class="slider round"
+            ></span
+          ></label>
+          <p class="statusPara">READ</p>
+        </div>
+      </div>
     </main>
     <footer class="footer">
       <div class="copyright">
-          <p>Copyright &copy; Venka <span class="year"></span></p>
-          <a href="https://github.com/VenkaSri/Library" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <p>Copyright &copy; Venka <span class="year"></span></p>
+        <a href="https://github.com/VenkaSri/Library" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
       </div>
     </footer>
 

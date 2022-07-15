@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&display=swap');
 
 /* add book form card */
 .card {
@@ -10,6 +10,7 @@
     align-items: center;
     margin-left: 38px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 360px;
 }
 
 .card h2 {
@@ -20,27 +21,38 @@
 }
 
 .bookInfo {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   margin-top: 19px;
+  width: 100%;
+  align-items: center;
 }
 
-.bookInfo input {
+input#bookName, input#bookAuthor, input#bookPages  {
   outline: none;
   border: none;
   background-color: #F1F1F1;
   border-radius: 15px;
   width: 420px;
   height: 45px;
-  margin-bottom: 26px;
   padding-left: 20px;
   color: #000;
 }
+
+input#bookName, input#bookAuthor {
+  margin-bottom: 26px;
+}
+
+input#bookPages {
+  margin-bottom: 15px;
+} 
 
 .bookRead {
   display: flex;
   width: 150px;
   gap: 10px;
   justify-content: center;
+  margin-bottom: 17px;
 }
 
 .rdLbl {
@@ -53,7 +65,7 @@
 .addBtn  {
     width: 115px;
     background-color: #6BAB39;
-    margin-top: 15px;
+    margin-bottom: 9px;
     height: 40px;
     font-family: 'Inter', sans-serif;
     display: grid;
@@ -68,6 +80,95 @@
   background-color: #fff;
   color: #000;
 }
+
+/* created card from user's input */
+
+.created-card {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 15px;
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey;
+  position: relative;
+  height: 360px;
+}
+
+.topDiv {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.bookName {
+  font-size: 25px;
+  width: 385px;
+  height: 115px;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+}
+
+.bookAuthor {
+  font-size: 20px;
+  width: 385px;
+  height: 25px;
+  text-align: center;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.bookPages {
+  font-size: 15px;
+  width: 385px;
+  height: 15px;
+  text-align: center;
+  flex-shrink: 0;
+  font-weight: 300;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+}
+
+.created-card hr {
+  width: 425px;
+}
+
+.botDiv {
+  border-top: 1px solid #fff;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 12px;
+}
+
+
+.statusLbl {
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.statusPara {
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  color: #258304;
+  margin-top: 17px;
+}
+
 
 
 

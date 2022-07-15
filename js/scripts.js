@@ -116,11 +116,12 @@ function createInput() {
   infoDiv.append(book);
   infoDiv.append(author);
   infoDiv.append(page);
+  infoDiv.append(readDiv);
+  infoDiv.append(addDiv);
   mainDiv.append(errorMessage);
-  mainDiv.append(readDiv);
   readDiv.append(checkbox);
   readDiv.append(lbl);
-  mainDiv.append(addDiv);
+
 
   mainCont.insertBefore(mainDiv, mainCont.firstChild);
 
@@ -151,6 +152,7 @@ function addValue() {
   let author = myLibrary[0].author;
   let page = myLibrary[0].pages;
   let content = document.createElement('div');
+  let line = document.createElement('hr');
   content.classList.add("created-card");
   let topDiv = document.createElement("div");
   topDiv.classList.add("topDiv");
@@ -166,21 +168,22 @@ function addValue() {
   pDiv.classList.add("bookPages");
   let delLink = document.createElement("a");
   let sPara = document.createElement("p");
-  sPara.classList.add('status-lbl')
+  sPara.classList.add('statusLbl')
   delLink.innerHTML = "Del";
   content.append(del);
   del.append(delLink);
   content.append(topDiv);
+  content.append(line);
   content.append(botDiv);
   topDiv.append(nDiv);
   topDiv.append(aDiv);
   topDiv.append(pDiv);
   botDiv.append(sPara);
-  sPara.innerHTML = "Status";
+  sPara.innerHTML = "STATUS";
 
   nDiv.append(name);
   aDiv.append(author);
-  pDiv.append(page + " pages");
+  pDiv.append(page + " PAGES");
 
   let lbl = document.createElement("label");
   botDiv.append(lbl);
