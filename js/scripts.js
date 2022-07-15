@@ -67,7 +67,7 @@ function deleteClass() {
   myNode.classList.remove("shake");
 }
 
-//create form card
+//create add book form card
 function createInput() {
 
   let addDiv = document.createElement("div");
@@ -75,10 +75,12 @@ function createInput() {
   addDiv.innerHTML = "Add";
   let mainDiv = document.createElement("div");
   mainDiv.classList.add("card");
+  let cardHeader = document.createElement('h2');
+  cardHeader.textContent = "Add a book";
   let infoDiv = document.createElement("div");
-  infoDiv.classList.add("book-info");
+  infoDiv.classList.add("bookInfo");
   let readDiv = document.createElement("div");
-  readDiv.classList.add("book-read");
+  readDiv.classList.add("bookRead");
   let book = document.createElement("input");
   book.setAttribute("type", "text");
   book.setAttribute("maxlength", 100);
@@ -109,7 +111,7 @@ function createInput() {
   let errorMessage = document.createElement("p");
   errorMessage.classList.add("errorMsg");
 
-
+  mainDiv.append(cardHeader);
   mainDiv.append(infoDiv);
   infoDiv.append(book);
   infoDiv.append(author);
@@ -150,7 +152,6 @@ function addValue() {
   let page = myLibrary[0].pages;
   let content = document.createElement('div');
   content.classList.add("created-card");
-  // const content = document.querySelector(".card");
   let topDiv = document.createElement("div");
   topDiv.classList.add("topDiv");
   let botDiv = document.createElement("div");
