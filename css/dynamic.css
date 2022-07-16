@@ -8,7 +8,6 @@
     flex-direction: column;
     position: relative;
     align-items: center;
-    margin-left: 38px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     height: 360px;
 }
@@ -137,6 +136,8 @@ input#bookPages {
   display: grid;
   place-items: center;
   margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
 .created-card hr {
@@ -168,6 +169,34 @@ input#bookPages {
   color: #258304;
   margin-top: 17px;
 }
+
+/* delete created card link */
+
+#del {
+  position: absolute;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  border: 1px solid #ff0000;
+  background-color: #fff;
+}
+
+#del:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+
+
+
+
+
+
 
 
 

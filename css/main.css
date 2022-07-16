@@ -30,13 +30,17 @@ body {
 
 .main-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(405px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(485px, 1fr));
     grid-template-rows: 375px;
-    grid-row-gap: 40px;
+    grid-row-gap: 10px;
     width: 100%;
     max-width: 1500px;
     margin: 44px auto;
     flex-shrink: 0;
+}
+
+.main-container > * { 
+  margin: 0 auto;
 }
 
 .header {
@@ -105,12 +109,5 @@ body {
     transform: translateY(-0.25em);
   }
 
-.del {
-    position: absolute;
-    right: 10px;
-}
 
-.del a {
-    font-size: 20px;
-}
 

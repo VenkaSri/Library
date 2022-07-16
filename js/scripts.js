@@ -166,10 +166,14 @@ function addValue() {
   aDiv.classList.add("bookAuthor");
   let pDiv = document.createElement("div");
   pDiv.classList.add("bookPages");
-  let delLink = document.createElement("a");
+  let delLink = document.createElement("div");
+  delLink.setAttribute("role", "link");
   let sPara = document.createElement("p");
-  sPara.classList.add('statusLbl')
-  delLink.innerHTML = "Del";
+  let delPara = document.createElement("p");
+  delPara.innerText = "x";
+  delLink.id = "del";
+  delLink.append(delPara);
+  sPara.classList.add('statusLbl');
   content.append(del);
   del.append(delLink);
   content.append(topDiv);
@@ -244,8 +248,10 @@ function toggleDel(div) {
 function toggleStatus(element) {
   if (checkRead == true) {
     element.innerHTML = "READ";
+    element.style.color = "#4BB543";
   } else {
     element.innerHTML = "IN PROGRESS";
+    element.style.color = "#FF7900";
   }
 }
 
