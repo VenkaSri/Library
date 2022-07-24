@@ -80,6 +80,10 @@ body {
   align-items: center;
 }
 
+#title-div h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
 
 .footer {
     display: flex;
