@@ -8,8 +8,14 @@
     flex-direction: column;
     position: relative;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
     height: 360px;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
 }
 
 .card h2 {
@@ -83,13 +89,15 @@ input#bookPages {
 /* created card from user's input */
 
 .created-card {
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
   width: 470px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid grey;
   position: relative;
   height: 360px;
 }
@@ -142,10 +150,11 @@ input#bookPages {
 
 .created-card hr {
   width: 425px;
+  color: #000;
 }
 
 .botDiv {
-  border-top: 1px solid #fff;
+
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -165,7 +174,7 @@ input#bookPages {
 .statusPara {
   font-size: 15px;
   font-family: 'Inter', sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   color: #258304;
   margin-top: 17px;
 }
@@ -175,22 +184,24 @@ input#bookPages {
 #del {
   position: absolute;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: grid;
-  place-items: center;
+  width: 20px;
+  height: 20px;
   right: 10px;
   top: 10px;
   cursor: pointer;
   border: 1px solid #ff0000;
-  background-color: #fff;
+}
+
+#del p {
+  position: absolute;
+  left: 6px;
+  top: 2px;
 }
 
 #del:hover {
   background-color: #ff0000;
   color: #fff;
 }
-
 
 
 

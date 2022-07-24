@@ -51,6 +51,19 @@ function addBookToLibrary() {
       }, 1000);
     }, 0);
     formSuccess = false;
+  } else if (bookPages.value < 1 || bookPages.value > 10000 ) {
+    const inField = document.querySelector("#bookPages");
+    inField.value = "";
+    inField.placeholder = "Pages has to be more than 0 and less 10000!";
+    setTimeout(function () {
+      const myNode = document.querySelector(".card");
+      myNode.classList.add("shake");
+      setTimeout(function () {
+        const myNode = document.querySelector(".card");
+        myNode.classList.remove("shake");
+      }, 1000);
+    }, 0);
+    formSuccess = false;
   } else {
     myLibrary.push(new Book(bookName.value, bookAuthor.value, bookPages.value));
     formSuccess = true;
@@ -95,10 +108,10 @@ function createInput() {
   author.required = true;
   let page = document.createElement("input");
   page.setAttribute("type", "number");
+  page.setAttribute("min", 1);
   page.setAttribute("max", 10000);
   page.setAttribute("id", "bookPages");
   page.setAttribute("placeholder", "Pages");
-  page.required = true;
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("id", "readCheck");
@@ -245,6 +258,14 @@ function toggleDel(div) {
   }
 }
 
+function toggleBorder(div) {
+  if (checkRead == true) {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
+}
+
 function toggleStatus(element) {
   if (checkRead == true) {
     element.innerHTML = "READ";
@@ -257,6 +278,7 @@ function toggleStatus(element) {
 
 window.onload = () => {
   createInput();
+  createdCardCheckbox();
 };
 
 function removeCard() {
@@ -266,3 +288,24 @@ function removeCard() {
 
 const d = new Date();
 document.querySelector(".year").innerHTML = d.getFullYear();
+
+
+function createdCardCheckbox() {
+  document.addEventListener("click", function (e) {
+    let chk = document.getElementById('chkBox');
+    let statusPara = document.querySelector('.statusPara');
+    let del = document.querySelector('.del');
+    if (e.target && e.target.id == "chkBox") {
+      if (chk.checked === true) {
+        checkRead = true;
+        toggleStatus(statusPara); 
+        toggleDel(del);
+      } else {
+        checkRead = false;
+        toggleStatus(statusPara); 
+        toggleDel(del);
+      }
+    }
+
+  });
+}

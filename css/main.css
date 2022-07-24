@@ -14,6 +14,8 @@ body {
     flex-direction: column;
     align-items: center;
     word-wrap: break-word;
+    background: rgb(114,178,228);
+    background: radial-gradient(circle, rgba(114,178,228,1) 0%, rgba(146,225,226,1) 100%); 
 }
 
 
@@ -52,6 +54,7 @@ body {
     position: relative;
     flex-shrink: 0;
     box-shadow: rgba(50, 50, 93, 0.1) 0px 13px 27px -5px, rgba(0, 0, 0, 0.20) 0px 8px 16px -8px;
+    background-color: #fff;
 }
 
 .header h1 {
