@@ -89,7 +89,7 @@ function createInput() {
   let mainDiv = document.createElement("div");
   mainDiv.classList.add("card");
   let cardHeader = document.createElement('h2');
-  cardHeader.textContent = "Add a book";
+  cardHeader.textContent = "ADD A BOOK";
   let infoDiv = document.createElement("div");
   infoDiv.classList.add("bookInfo");
   let readDiv = document.createElement("div");
@@ -182,10 +182,10 @@ function addValue() {
   let delLink = document.createElement("div");
   delLink.setAttribute("role", "link");
   let sPara = document.createElement("p");
-  let delPara = document.createElement("p");
-  delPara.innerText = "x";
+  let iElement = document.createElement('i');
   delLink.id = "del";
-  delLink.append(delPara);
+  iElement.classList.add('fa', 'fa-times');
+  delLink.append(iElement);
   sPara.classList.add('statusLbl');
   content.append(del);
   del.append(delLink);
