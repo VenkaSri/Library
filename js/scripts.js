@@ -130,6 +130,7 @@ function createInput() {
   mainDiv.append(cardHeader);
   mainDiv.append(infoDiv);
   infoDiv.append(book);
+  
   infoDiv.append(author);
   infoDiv.append(page);
   infoDiv.append(readDiv);
@@ -137,8 +138,8 @@ function createInput() {
   mainDiv.append(errorMessage);
   readDiv.append(checkbox);
   readDiv.append(lbl);
-
-
+   
+  
   mainCont.insertBefore(mainDiv, mainCont.firstChild);
 
   // if the form is valid, this replaces the form card with newly created card
@@ -298,6 +299,7 @@ window.onload = () => {
 };
 
 
-//date for footer
+//year for footer
 const d = new Date();
+
 document.querySelector(".year").innerHTML = d.getFullYear();

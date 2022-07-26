@@ -154,6 +154,7 @@ backdrop-filter: blur(0px);
 .created-card hr {
   width: 425px;
   color: #000;
+  outline: none;
 }
 
 .botDiv {
