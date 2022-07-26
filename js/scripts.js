@@ -13,6 +13,27 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
+// add book form if one doesn't exist 
+
+addButton.addEventListener("click", () => {
+  if (formSuccess) {
+    createInput();
+    formSuccess = false;
+  } else {
+    setTimeout(function () {
+      const err = document.querySelector(".errorMsg");
+      err.innerHTML = "You can only add one book at a time!";
+      err.style.display = "block";
+      const myNode = document.querySelector(".card");
+      myNode.classList.add("shake");
+      setTimeout(function () {
+        const myNode = document.querySelector(".card");
+        myNode.classList.remove("shake");
+      }, 1000);
+    }, 0);
+  }
+});
+
 // add book object to array, added animation if theres an error
 
 function addBookToLibrary() {
@@ -232,6 +253,10 @@ function addValue() {
     }
   });
 
+  iElement.addEventListener('click', () => {
+    removeCard(content);
+  });
+  
   myLibrary.length = 0;
 }
 

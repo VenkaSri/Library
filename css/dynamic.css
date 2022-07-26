@@ -194,10 +194,15 @@ backdrop-filter: blur(0px);
   cursor: pointer;
   display: grid;
   place-items: center;
+  background-color: rgb(255, 0, 0);
 }
 
 #del i {
-  color: red;
+  color: rgb(255, 255, 255);
+}
+
+#del i:hover {
+  color: rgb(255, 0, 0);
 }
 
 #del p {
@@ -207,7 +212,7 @@ backdrop-filter: blur(0px);
 }
 
 #del:hover {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
 }
 
 
