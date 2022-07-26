@@ -31,7 +31,7 @@ I definitely would have wrote way less JS code if I had just made a popup or som
 - Add stats 
 
 ## Demo
-![Demo](https://i.imgur.com/HPUymNK.gif)
+![Demo](https://i.imgur.com/JVURt59.gif)
 
 ## Tools
 - Visual Studio Code
