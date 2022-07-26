@@ -1,29 +1,9 @@
 const addButton = document.querySelector(".addIcon");
 const delDiv = document.querySelector(".del");
-
-// const bTable = document.querySelector('table');
 const mainCont = document.querySelector(".main-container");
+
 let checkRead;
 let formSuccess = false;
-
-addButton.addEventListener("click", () => {
-  if (formSuccess) {
-    createInput();
-    formSuccess = false;
-  } else {
-    setTimeout(function () {
-      const err = document.querySelector(".errorMsg");
-      err.innerHTML = "You can only add one book at a time!";
-      err.style.display = "block";
-      const myNode = document.querySelector(".card");
-      myNode.classList.add("shake");
-      setTimeout(function () {
-        const myNode = document.querySelector(".card");
-        myNode.classList.remove("shake");
-      }, 1000);
-    }, 0);
-  }
-});
 
 let myLibrary = [];
 
@@ -32,6 +12,8 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
+// add book object to array, added animation if theres an error
 
 function addBookToLibrary() {
   if (
@@ -138,14 +120,14 @@ function createInput() {
 
   mainCont.insertBefore(mainDiv, mainCont.firstChild);
 
+  // if the form is valid, this replaces the form card with newly created card
   const addBtn = document.querySelector(".addBtn");
   addBtn.addEventListener("click", () => {
     addBookToLibrary();
     if (formSuccess) {
-      const myNode = document.querySelector(".card");
-      myNode.innerHTML = "";
+      let card = document.querySelector('.card');
       addValue();
-      removeCard();
+      removeCard(card);
     }
   });
 
@@ -159,6 +141,8 @@ function createInput() {
     },
   };
 }
+
+// creates an another card with values from the form
 
 function addValue() {
   let name = myLibrary[0].title;
@@ -221,6 +205,7 @@ function addValue() {
 
 
   myLibrary[0].read();
+
   //displays status/del based what user selects from form 
   if (checkRead) {
     chk.checked = true;
@@ -266,6 +251,8 @@ function toggleBorder(div) {
   }
 }
 
+// change status text
+
 function toggleStatus(element) {
   if (checkRead == true) {
     element.innerHTML = "READ";
@@ -276,36 +263,16 @@ function toggleStatus(element) {
   }
 }
 
+
+function removeCard(node) {
+  node.remove();
+}
+
 window.onload = () => {
   createInput();
-  createdCardCheckbox();
 };
 
-function removeCard() {
-  const myNode = document.querySelector(".card");
-  myNode.remove();
-}
 
+//date for footer
 const d = new Date();
 document.querySelector(".year").innerHTML = d.getFullYear();
-
-
-function createdCardCheckbox() {
-  document.addEventListener("click", function (e) {
-    let chk = document.getElementById('chkBox');
-    let statusPara = document.querySelector('.statusPara');
-    let del = document.querySelector('.del');
-    if (e.target && e.target.id == "chkBox") {
-      if (chk.checked === true) {
-        checkRead = true;
-        toggleStatus(statusPara); 
-        toggleDel(del);
-      } else {
-        checkRead = false;
-        toggleStatus(statusPara); 
-        toggleDel(del);
-      }
-    }
-
-  });
-}
