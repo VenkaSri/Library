@@ -25,9 +25,10 @@ I definitely would have wrote way less JS code if I had just made a popup or som
 - Prototypes
 
 ## Features to implement
-- A way to store all the cards 
+- A way to store all the added cards even after user exits page
 - Better and more specific validation for each input
 - Reponsive design for mobile 
+- Add stats 
 
 ## Demo
 ![Demo](https://i.imgur.com/HPUymNK.gif)
