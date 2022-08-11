@@ -1,8 +1,5 @@
 # Library
 
-A small Library app which I made for the [The Odin Project curriculum.](https://www.theodinproject.com/lessons/node-path-javascript-library)
-
-
 
 [Click here for a live preview](https://venkasri.github.io/Library/)
 
